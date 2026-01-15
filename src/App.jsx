@@ -40,7 +40,6 @@ const App = () => {
   };
 
   // --- DATA ---
-
   const services = [
     {
       id: "service-personal",
@@ -48,12 +47,12 @@ const App = () => {
       subtitle: "Индивидуальный формат",
       price: "6 000 ₽",
       duration: "60 минут",
-      desc: "Интегративный подход (телесная, системная терапия, гипнотерапия). Поиск безопасного решения и проработка неработающих сценариев.",
+      desc: "Я работаю в интегративном подходе с инструментами из телесной, семейной системной терапии и гипнотерапии. В течение сессии я помогаю найти оптимальное и безопасное решение, объясняя каждый шаг. Мы обсуждаем неработающие сценарии и выстраиваем новые.",
       features: [
         "Личные кризисы и поиск себя",
         "Тревога, цейтнот, невозможность расслабиться",
         "Телесные сбои и психосоматика",
-        "Сложности в отношениях"
+        "Сложности в построении отношений"
       ],
       icon: <Brain className="w-6 h-6" />,
       isPrimary: false
@@ -64,12 +63,12 @@ const App = () => {
       subtitle: "Работают 2 терапевта",
       price: "9 000 ₽",
       duration: "75-90 минут",
-      desc: "Безопасное пространство с двумя специалистами. Работаем с отношениями как с системой, без поиска «виноватого».",
+      desc: "Вместе с вами работают два терапевта одновременно. Это создает безопасное пространство, где слышан каждый. Мы смотрим на ситуацию как на живую систему, работая с отношениями, а не ищем «виноватого».",
       features: [
         "Затяжные конфликты и обиды",
         "Ощущение «разных языков»",
         "Кризисы (измены, переезды, финансы)",
-        "Сложности с детьми"
+        "Сложности с детьми и их психосоматика"
       ],
       icon: <Users className="w-6 h-6" />,
       isPrimary: true,
@@ -81,12 +80,12 @@ const App = () => {
       subtitle: "Для руководителей и команд",
       price: "от 6 000 ₽",
       duration: "60-90 минут",
-      desc: "Психология системных изменений + опыт PM. Работа с коммуникацией, лидерством, выгоранием и кризисным управлением.",
+      desc: "Объединяю психологию системных изменений с опытом управления международными проектами. Работаем с «психологией» бизнес-процессов: коммуникацией, лидерством, выгоранием и кризисным управлением.",
       features: [
-        "Профессиональное выгорание",
+        "Профессиональное выгорание лидера",
         "Конфликты внутри команды",
-        "Саботаж изменений",
-        "Подготовка к переговорам"
+        "Саботаж изменений и утеря лояльности",
+        "Подготовка к сложным переговорам"
       ],
       icon: <Target className="w-6 h-6" />,
       isPrimary: false
@@ -94,7 +93,6 @@ const App = () => {
   ];
 
   // --- IMAGES ---
-  
   const heroUrl = "/images/hero-picture.webp";
   const profileUrl = "/images/profile-picture.webp";
   const bioUrl = "/images/web-picture.webp";
@@ -146,7 +144,11 @@ const App = () => {
           </div>
 
           {/* Mobile Burger Button */}
-          <button className="md:hidden text-navy-900 p-2 focus:outline-none" onClick={() => setIsMenuOpen(true)}>
+          <button 
+            className="md:hidden text-navy-900 p-2 focus:outline-none" 
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Открыть меню"
+          >
             <Menu size={28} />
           </button>
         </div>
@@ -163,7 +165,8 @@ const App = () => {
             <div className="pt-10 pb-6 px-6 flex flex-col items-center border-b border-gray-100 relative">
               <button 
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-navy-900 p-2"
+                className="absolute top-4 right-4 text-slate-500 hover:text-navy-900 p-2"
+                aria-label="Закрыть меню"
               >
                 <X size={24} />
               </button>
@@ -171,7 +174,9 @@ const App = () => {
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4">
                 <img 
                   src={profileUrl} 
-                  alt="Profile" 
+                  alt="Anastasiia Druzhinina Profile" 
+                  width="96" height="96"
+                  loading="lazy"
                   className="w-full h-full object-cover object-top" 
                 />
               </div>
@@ -197,10 +202,10 @@ const App = () => {
 
             <div className="p-8 bg-gray-50 mt-auto border-t border-gray-100">
                <div className="flex justify-center gap-6">
-                  <a href={LINKS.tgChat} className="w-12 h-12 bg-white text-navy-900 border border-gray-200 flex items-center justify-center rounded-full hover:bg-blue-500 hover:text-white transition-all shadow-sm" target="_blank" rel="noreferrer">
+                  <a href={LINKS.tgChat} aria-label="Telegram" className="w-12 h-12 bg-white text-navy-900 border border-gray-200 flex items-center justify-center rounded-full hover:bg-blue-500 hover:text-white transition-all shadow-sm" target="_blank" rel="noreferrer">
                     <Send size={20} />
                   </a>
-                  <a href={LINKS.whatsapp} className="w-12 h-12 bg-white text-navy-900 border border-gray-200 flex items-center justify-center rounded-full hover:bg-green-600 hover:text-white transition-all shadow-sm" target="_blank" rel="noreferrer">
+                  <a href={LINKS.whatsapp} aria-label="WhatsApp" className="w-12 h-12 bg-white text-navy-900 border border-gray-200 flex items-center justify-center rounded-full hover:bg-green-600 hover:text-white transition-all shadow-sm" target="_blank" rel="noreferrer">
                     <MessageCircle size={20} />
                   </a>
                </div>
@@ -210,7 +215,6 @@ const App = () => {
 
       {/* --- HERO SECTION --- */}
       <header className="relative w-full min-h-screen pt-24 md:pt-28 flex flex-col md:flex-row">
-        {/* Adjusted Padding: py-12 md:py-12 to reduce white space */}
         <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-12 md:py-12 bg-sand-50 z-10">
           <div className="animate-fade-in-up">
             <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-navy-900/10 rounded-full bg-white">
@@ -226,7 +230,7 @@ const App = () => {
             </h1>
             <p className="font-sans text-slate-600 text-lg leading-relaxed mb-10 max-w-md border-l-2 border-gold-200 pl-6">
               Я не просто слушаю. Я отмечаю неработающие сценарии в архитектуре вашей семьи, бизнеса, тела и помогаю усилить здоровые.
-              <br/><span className="text-xs uppercase tracking-widest mt-2 block text-slate-400">Доказательный подход</span>
+              <br/><span className="text-xs uppercase tracking-widest mt-2 block text-slate-500">Доказательный подход</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
@@ -245,10 +249,13 @@ const App = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 h-[60vh] md:h-screen relative bg-stone-300 overflow-hidden">
-           {/* FIX: object-top anchors the image to the top, preventing the head from being cut off */}
+           {/* Performance: Eager loading and fetchPriority High for LCP element */}
            <img 
               src={heroUrl} 
-              alt="Anastasiia Druzhinina" 
+              alt="Anastasiia Druzhinina Hero" 
+              width="1000" height="1500"
+              loading="eager"
+              fetchPriority="high"
               className="w-full h-full object-cover object-top" 
            />
            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-navy-900/80 to-transparent p-8 md:p-12">
@@ -271,6 +278,7 @@ const App = () => {
             href={LINKS.scholar} 
             target="_blank" 
             rel="noreferrer"
+            aria-label="Google Scholar Profile"
             className="shrink-0 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold-500 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-full"
           >
             <BookOpen size={14}/> Google Scholar
@@ -278,6 +286,7 @@ const App = () => {
         </div>
       </div>
 
+      <main>
       {/* --- BIO SECTION --- */}
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-6">
@@ -315,7 +324,7 @@ const App = () => {
                 ].map((stat, i) => (
                   <div key={i}>
                     <div className="font-serif text-3xl text-gold-600">{stat.val}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-slate-400">{stat.label}</div>
+                    <div className="text-[10px] uppercase tracking-widest text-slate-500">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -324,7 +333,9 @@ const App = () => {
                <div className="aspect-[4/5] bg-slate-100 relative overflow-hidden rounded-sm">
                  <img 
                     src={bioUrl} 
-                    alt="Working Process" 
+                    alt="Anastasiia working process" 
+                    width="600" height="750"
+                    loading="lazy"
                     className="w-full h-full object-cover object-center" 
                  />
                </div>
@@ -340,7 +351,7 @@ const App = () => {
              <span className="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2 block">Доказательная база</span>
              <h2 className="font-serif text-3xl text-navy-900">Дипломы и Сертификация</h2>
           </div>
-          <div className="flex gap-2 text-slate-400 text-sm items-center">
+          <div className="flex gap-2 text-slate-500 text-sm items-center">
             <span className="uppercase tracking-widest text-[10px]">Листать</span> <ArrowRight size={16}/>
           </div>
         </div>
@@ -353,6 +364,8 @@ const App = () => {
                   <img 
                     src={imgSrc} 
                     alt={`Certificate ${idx + 1}`} 
+                    width="450" height="320"
+                    loading="lazy"
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
@@ -407,7 +420,6 @@ const App = () => {
                   rounded-none md:rounded-sm
                 `}
               >
-                {/* Mobile Header */}
                 <div 
                   className="p-6 md:p-10 cursor-pointer md:cursor-default flex justify-between items-center"
                   onClick={() => window.innerWidth < 1024 && toggleService(i)}
@@ -429,8 +441,6 @@ const App = () => {
                     {openServiceIdx === i ? <ChevronUp /> : <ChevronDown />}
                   </div>
                 </div>
-
-                {/* Content */}
                 <div className={`px-6 pb-6 md:px-10 md:pb-10 flex-col flex-grow ${openServiceIdx === i ? 'flex' : 'hidden'} md:flex`}>
                   <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow">{s.desc}</p>
                   <ul className="space-y-4 mb-8">
@@ -446,10 +456,10 @@ const App = () => {
                       <span className="font-serif text-xl text-navy-900">{s.price}</span>
                       <span className="text-xs text-slate-400">{s.duration}</span>
                     </div>
-                    {/* BUTTON SCROLLS TO DETAIL SECTION */}
                     <button 
                       onClick={() => scrollTo(s.id)} 
                       className={`w-full py-4 text-xs font-bold uppercase tracking-widest transition-all ${s.isPrimary ? 'bg-gold-600 text-white hover:bg-gold-700' : 'bg-navy-900 text-white hover:bg-navy-800'}`}
+                      aria-label={`Подробнее о ${s.title}`}
                     >
                       Подробнее
                     </button>
@@ -509,6 +519,7 @@ const App = () => {
                 href={LINKS.tgChat} 
                 target="_blank" 
                 rel="noreferrer"
+                aria-label="Забронировать личную сессию в Telegram"
                 className="inline-flex items-center gap-2 bg-navy-900 text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-navy-800 transition-all mt-6"
               >
                 Забронировать <ArrowRight size={16}/>
@@ -582,6 +593,7 @@ const App = () => {
                   href={LINKS.tgChat} 
                   target="_blank" 
                   rel="noreferrer"
+                  aria-label="Записаться парой"
                   className="inline-flex items-center justify-center gap-2 bg-gold-600 text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gold-700 transition-all"
                 >
                   Записаться парой
@@ -674,6 +686,7 @@ const App = () => {
                 href={LINKS.tgChat} 
                 target="_blank" 
                 rel="noreferrer"
+                aria-label="Обсудить бизнес задачу"
                 className="inline-flex items-center gap-2 bg-navy-900 text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-navy-800 transition-all mt-4"
               >
                 Обсудить задачу <ArrowRight size={16}/>
@@ -697,6 +710,8 @@ const App = () => {
                    <img 
                       src={imgSrc} 
                       alt={`Review ${idx + 1}`} 
+                      width="300" height="500"
+                      loading="lazy"
                       className="w-full h-full object-contain"
                    />
                 </div>
@@ -718,19 +733,19 @@ const App = () => {
                 Работа начинается с диагностики. Напишите мне в удобном мессенджере, обсудим и подберем время.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
-                <a href={LINKS.tgChat} className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#229ED9] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                <a href={LINKS.tgChat} aria-label="Telegram Личный" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#229ED9] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
                   <MessageCircle size={18} /> Личный Telegram
                 </a>
-                <a href={LINKS.whatsapp} className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#25D366] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                <a href={LINKS.whatsapp} aria-label="WhatsApp" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#25D366] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
                   <MessageCircle size={18} /> WhatsApp
                 </a>
-                <a href={LINKS.tgChannel} className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#229ED9] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                <a href={LINKS.tgChannel} aria-label="Telegram Канал" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#229ED9] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
                   <Send size={18} /> Telegram Канал
                 </a>
-                <a href={LINKS.instagram} className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#E1306C] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                <a href={LINKS.instagram} aria-label="Instagram" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#E1306C] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
                   <Instagram size={18} /> Instagram
                 </a>
-                <a href={LINKS.youtube} className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#FF0000] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm sm:col-span-2">
+                <a href={LINKS.youtube} aria-label="YouTube" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#FF0000] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm sm:col-span-2">
                   <Youtube size={18} /> YouTube
                 </a>
               </div>
@@ -752,6 +767,7 @@ const App = () => {
           </div>
         </div>
       </footer>
+      </main>
 
     </div>
   );
