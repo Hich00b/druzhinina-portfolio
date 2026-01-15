@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { 
   Menu, X, ArrowRight, Brain, Users, Target, 
-  Check, ExternalLink, MessageCircle, FileText,
-  Award, ChevronRight, ChevronDown, ChevronUp,
-  Instagram, Youtube, Send, Phone, MapPin, BookOpen, Clock, Wallet
+  Check, MessageCircle, 
+  Instagram, Youtube, Send, MapPin, BookOpen, Clock, Wallet
 } from 'lucide-react';
 
 const App = () => {
@@ -94,6 +93,7 @@ const App = () => {
 
   // --- IMAGES ---
   const heroUrl = "/images/hero-picture.webp";
+  const heroMobileUrl = "/images/hero-mobile.webp"; // NEW Mobile Image
   const profileUrl = "/images/profile-picture.webp";
   const bioUrl = "/images/web-picture.webp";
   
@@ -137,7 +137,7 @@ const App = () => {
             ))}
             <button 
               onClick={() => scrollTo('contact')}
-              className="text-gold-600 hover:text-gold-500 transition-colors"
+              className="text-amber-700 hover:text-amber-800 transition-colors font-bold"
             >
               Контакты
             </button>
@@ -181,7 +181,7 @@ const App = () => {
                 />
               </div>
               <h2 className="font-serif text-xl text-navy-900 font-bold text-center">Anastasiia<br/>Druzhinina</h2>
-              <p className="text-[10px] uppercase tracking-widest text-gold-600 mt-2 font-bold">Научный сотрудник • Психолог</p>
+              <p className="text-[10px] uppercase tracking-widest text-amber-700 mt-2 font-bold">Научный сотрудник • Психолог</p>
             </div>
 
             <div className="flex-1 py-8 px-6 flex flex-col gap-4">
@@ -189,13 +189,13 @@ const App = () => {
                 <button 
                   key={item} 
                   onClick={() => scrollTo(item === 'Обо мне' ? 'about' : item === 'Квалификация' ? 'credentials' : item === 'Услуги' ? 'services' : 'reviews')}
-                  className="text-center py-2 text-navy-900 font-serif text-xl hover:text-gold-600 transition-colors"
+                  className="text-center py-2 text-navy-900 font-serif text-xl hover:text-amber-700 transition-colors"
                 >
                   {item}
                 </button>
               ))}
               <div className="h-px bg-gray-100 w-1/2 mx-auto my-2"></div>
-              <button onClick={() => scrollTo('contact')} className="text-center py-2 text-gold-600 font-bold uppercase tracking-widest text-xs">
+              <button onClick={() => scrollTo('contact')} className="text-center py-2 text-amber-700 font-bold uppercase tracking-widest text-xs">
                   Контакты
               </button>
             </div>
@@ -226,7 +226,7 @@ const App = () => {
             <h1 className="font-serif text-5xl lg:text-7xl text-navy-900 mb-6 leading-[1.1]">
               Системный <br />
               подход <br />
-              <span className="italic text-gold-600">к Вашему здоровью</span>
+              <span className="italic text-amber-700">к Вашему здоровью</span>
             </h1>
             <p className="font-sans text-slate-600 text-lg leading-relaxed mb-10 max-w-md border-l-2 border-gold-200 pl-6">
               Я не просто слушаю. Я отмечаю неработающие сценарии в архитектуре вашей семьи, бизнеса, тела и помогаю усилить здоровые.
@@ -249,8 +249,10 @@ const App = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 h-[60vh] md:h-screen relative bg-stone-300 overflow-hidden">
-           {/* Performance: Eager loading and fetchPriority High for LCP element */}
+           {/* RESPONSIVE IMAGE FIX: Loads small image on mobile, big on desktop */}
            <img 
+              srcSet={`${heroMobileUrl} 500w, ${heroUrl} 1000w`}
+              sizes="(max-width: 768px) 500px, 1000px"
               src={heroUrl} 
               alt="Anastasiia Druzhinina Hero" 
               width="1000" height="1500"
@@ -294,7 +296,7 @@ const App = () => {
             <div className="md:col-span-7 space-y-8">
               <h2 className="font-serif text-4xl text-navy-900">
                 От Управления Инновациями <br />
-                к <span className="italic text-gold-600">Архитектуре Психики</span>
+                к <span className="italic text-amber-700">Архитектуре Психики</span>
               </h2>
               <div className="prose prose-slate text-slate-600 leading-loose">
                 <p>
@@ -323,7 +325,7 @@ const App = () => {
                   { label: "Методик", val: "8+" }
                 ].map((stat, i) => (
                   <div key={i}>
-                    <div className="font-serif text-3xl text-gold-600">{stat.val}</div>
+                    <div className="font-serif text-3xl text-amber-700">{stat.val}</div>
                     <div className="text-[10px] uppercase tracking-widest text-slate-500">{stat.label}</div>
                   </div>
                 ))}
@@ -348,7 +350,7 @@ const App = () => {
       <section id="credentials" className="py-20 bg-sand-100 overflow-hidden">
         <div className="container mx-auto px-6 mb-12 flex justify-between items-end">
           <div>
-             <span className="text-xs font-bold uppercase tracking-widest text-gold-600 mb-2 block">Доказательная база</span>
+             <span className="text-xs font-bold uppercase tracking-widest text-amber-700 mb-2 block">Доказательная база</span>
              <h2 className="font-serif text-3xl text-navy-900">Дипломы и Сертификация</h2>
           </div>
           <div className="flex gap-2 text-slate-500 text-sm items-center">
@@ -435,7 +437,7 @@ const App = () => {
                     </div>
                     <h3 className="font-serif text-2xl text-navy-900 mb-1">{s.title}</h3>
                     <p className="text-xs uppercase tracking-widest text-slate-500">{s.subtitle}</p>
-                    <p className="md:hidden mt-2 text-gold-600 font-serif text-sm">{s.price}</p>
+                    <p className="md:hidden mt-2 text-amber-700 font-serif text-sm">{s.price}</p>
                   </div>
                   <div className="md:hidden text-navy-900">
                     {openServiceIdx === i ? <ChevronUp /> : <ChevronDown />}
@@ -478,7 +480,7 @@ const App = () => {
             <div className="p-3 bg-navy-900 text-white rounded-full"><Brain size={24} /></div>
             <div>
               <h2 className="font-serif text-3xl md:text-4xl text-navy-900">Личная сессия</h2>
-              <p className="text-gold-600 uppercase tracking-widest text-xs font-bold mt-1">Индивидуальный формат</p>
+              <p className="text-amber-700 uppercase tracking-widest text-xs font-bold mt-1">Индивидуальный формат</p>
             </div>
           </div>
 
@@ -536,7 +538,7 @@ const App = () => {
             <div className="p-3 bg-gold-600 text-white rounded-full"><Users size={24} /></div>
             <div>
               <h2 className="font-serif text-3xl md:text-4xl text-navy-900">Семейная ко-терапия</h2>
-              <p className="text-gold-600 uppercase tracking-widest text-xs font-bold mt-1">Рекомендовано для пар и семей</p>
+              <p className="text-amber-700 uppercase tracking-widest text-xs font-bold mt-1">Рекомендовано для пар и семей</p>
             </div>
           </div>
 
@@ -614,7 +616,7 @@ const App = () => {
             <div className="p-3 bg-navy-800 text-white rounded-full"><Target size={24} /></div>
             <div>
               <h2 className="font-serif text-3xl md:text-4xl text-navy-900">Бизнес-Психология</h2>
-              <p className="text-gold-600 uppercase tracking-widest text-xs font-bold mt-1">Для руководителей и команд</p>
+              <p className="text-amber-700 uppercase tracking-widest text-xs font-bold mt-1">Для руководителей и команд</p>
             </div>
           </div>
 
