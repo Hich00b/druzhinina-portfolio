@@ -250,7 +250,7 @@ const App = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 h-[60vh] md:h-screen relative bg-stone-300 overflow-hidden">
-           {/* RESPONSIVE IMAGE FIX: Loads small image on mobile, big on desktop */}
+           {/* RESPONSIVE IMAGE: Loads small image on mobile, big on desktop */}
            <img 
               srcSet={`${heroMobileUrl} 500w, ${heroUrl} 1000w`}
               sizes="(max-width: 768px) 500px, 1000px"
@@ -510,7 +510,7 @@ const App = () => {
               </p>
 
               <div className="bg-sand-50 p-6 rounded-lg border-l-4 border-navy-900 mt-8">
-                <h4 className="font-serif text-xl text-navy-900 mb-4">С чем можно прийти?</h4>
+                <h3 className="font-serif text-xl text-navy-900 mb-4">С чем можно прийти?</h3>
                 <ul className="space-y-3">
                   <li className="flex gap-3"><Check className="text-gold-500 shrink-0" size={20}/> «Я для мужчин — "свой парень", а не женщина. Меня не видят в романтическом ключе».</li>
                   <li className="flex gap-3"><Check className="text-gold-500 shrink-0" size={20}/> «Постоянный цейтнот и тревога: не могу расслабиться даже в душе, всё время "на взводе"».</li>
@@ -555,12 +555,12 @@ const App = () => {
                 Сессии проводятся онлайн или очно для пар и семей (с детьми от 8 лет). Вместе с вами будут работать два терапевта одновременно — я и моя коллега. Мы создаем безопасное и сбалансированное пространство, где слышан будет каждый, а работа будет направлена на взаимодействие между вами, а не на поиск «виноватого».
               </p>
 
-              <h4 className="font-bold text-navy-900 text-lg mt-6">Как мы начнем?</h4>
+              <h3 className="font-bold text-navy-900 text-lg mt-6">Как мы начнем?</h3>
               <p>
                 В переписке мы с вами обозначим главную тему-вопрос. Если он будет подходить больше для индивидуальной работы, я предложу контакты коллег или помогу перестроить для семейной консультации. После утверждения запроса, попрошу вас и каждый участника сессии ответить на несколько коротких вопросов — это ваш «билет» на сессию. Время бронируется после предоплаты за сутки.
               </p>
 
-              <h4 className="font-bold text-navy-900 text-lg mt-6">Что будет на самой встрече?</h4>
+              <h3 className="font-bold text-navy-900 text-lg mt-6">Что будет на самой встрече?</h3>
               <p>
                 Познакомимся, обсудим правила, а затем вместе исследуем ваш запрос. Мы будем смотреть на ситуацию как на живую систему, где все элементы связаны. В работе мы с ко-терапевтом используем техники работы с телом, гипнотерапию и ДПДГ — если это поможет сдвинуть ситуацию с точки. В конце подведем итоги и договоримся о простых шагах.
               </p>
@@ -632,15 +632,15 @@ const App = () => {
                 <strong>Суть подхода:</strong> Я объединяю психологию системных изменений с практическим опытом управления международными проектами. Мы работаем не только с личными запросами, но и с «психологией» бизнес-процессов: коммуникацией, лидерством, групповой динамикой и кризисным управлением.
               </p>
 
-              <h4 className="font-bold text-navy-900 text-lg mt-6">Как строится работа?</h4>
+              <h3 className="font-bold text-navy-900 text-lg mt-6">Как строится работа?</h3>
               
               <div className="space-y-6 border-l-2 border-slate-200 pl-6 ml-2">
                 <div>
-                  <h5 className="font-bold text-navy-900">1. Предварительный анализ</h5>
+                  <h4 className="font-bold text-navy-900">1. Предварительный анализ</h4>
                   <p className="text-sm mt-1">Определяем фокус: это запрос от лица компании/отдела или личный запрос руководителя. Это позволяет мне подготовить наиболее релевантный инструментарий.</p>
                 </div>
                 <div>
-                  <h5 className="font-bold text-navy-900">2. Сессия (60-75 минут)</h5>
+                  <h4 className="font-bold text-navy-900">2. Сессия (60-75 минут)</h4>
                   <p className="text-sm mt-1">
                     <strong>Контракт:</strong> Четко договариваемся о цели и конфиденциальности.<br/>
                     <strong>Погружение:</strong> Работаем через призму системного и стратегического подходов. Исследуем скрытые механизмы и роли.<br/>
@@ -648,13 +648,13 @@ const App = () => {
                   </p>
                 </div>
                 <div>
-                  <h5 className="font-bold text-navy-900">3. Итог и развитие</h5>
+                  <h4 className="font-bold text-navy-900">3. Итог и развитие</h4>
                   <p className="text-sm mt-1">Резюмируем инсайты. Если требуется глубокая трансформация, я предложу оптимальный формат (регулярный сеттинг или серия сессий).</p>
                 </div>
               </div>
 
               <div className="bg-navy-900 text-slate-300 p-8 rounded-lg mt-8">
-                <h4 className="font-serif text-xl text-white mb-4">Типичные запросы</h4>
+                <h3 className="font-serif text-xl text-white mb-4">Типичные запросы</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <strong className="text-gold-500 block mb-2 text-sm uppercase">Для руководителей</strong>
