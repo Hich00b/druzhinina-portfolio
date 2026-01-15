@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { 
   Menu, X, ArrowRight, Brain, Users, Target, 
   Check, MessageCircle, 
-  Instagram, Youtube, Send, MapPin, BookOpen, Clock, Wallet
+  Instagram, Youtube, Send, MapPin, BookOpen, Clock, Wallet,
+  ChevronDown, ChevronUp 
 } from 'lucide-react';
 
 const App = () => {
@@ -93,7 +94,7 @@ const App = () => {
 
   // --- IMAGES ---
   const heroUrl = "/images/hero-picture.webp";
-  const heroMobileUrl = "/images/hero-mobile.webp"; // NEW Mobile Image
+  const heroMobileUrl = "/images/hero-mobile.webp";
   const profileUrl = "/images/profile-picture.webp";
   const bioUrl = "/images/web-picture.webp";
   
