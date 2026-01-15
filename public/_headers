@@ -1,0 +1,12 @@
+# Do not cache HTML files (so users always get the latest index.html reference)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Cache static assets (JS, CSS, Images) for a long time
+# Vite adds unique hashes to these filenames, so it's safe to cache them forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images in your public/images folder
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
