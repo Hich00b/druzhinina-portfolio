@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // These match the self-hosted font names exactly
         sans: ['Lato', 'sans-serif'],
         serif: ['"Playfair Display"', 'serif'],
       },
