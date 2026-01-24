@@ -113,7 +113,7 @@ const App = () => {
   const profileUrl = "/images/profile-picture.webp";
   const bioUrl = "/images/web-picture.webp";
   
-  // LOGIC: Make 19, 20, 21 appear first, remove 18, then the rest
+  // LOGIC: Make 19, 20, 21 appear first, then 1, 2, 3...
   const priorityCerts = [19, 20, 21];
   const otherCerts = Array.from({ length: 21 }, (_, i) => i + 1)
     .filter(id => id !== 18 && !priorityCerts.includes(id));
@@ -320,7 +320,8 @@ const App = () => {
               <h2 className="font-serif text-4xl text-navy-900 font-bold">
                 Путь <span className="line-through decoration-amber-700 decoration-2 text-slate-400">не</span>Героя и принципы в работе
               </h2>
-              <div className="prose prose-slate text-slate-600 leading-loose text-lg">
+              {/* Reduced font size to text-base to account for Nunito's larger appearance */}
+              <div className="prose prose-slate text-slate-600 leading-loose text-base">
                 <p>
                   Мой путь в психологию начался не с получения «вышки», а со сферы управления проектами и исследований. Так, более 10 лет я работаю с командами — от наукоёмких стартапов в СНГ до компаний в Европе и Азии. За это время получилось сформировать для себя ключевые принципы, которые теперь применяю в психологической практике с клиентами и считаю основой любого взаимодействия человек-человек: доверие, интерес, честность.
                 </p>
@@ -350,7 +351,8 @@ const App = () => {
                 ))}
               </div>
             </div>
-            <div className="md:col-span-5 relative mt-8 md:mt-0 self-end">
+            {/* Removed self-end to prevent space at top, added items-start to grid above */}
+            <div className="md:col-span-5 relative mt-8 md:mt-0">
                <div className="aspect-[4/5] bg-slate-100 relative overflow-hidden rounded-sm">
                  <img 
                     src={bioUrl} 
@@ -504,7 +506,7 @@ const App = () => {
           </div>
 
           <div className="grid md:grid-cols-12 gap-12">
-            <div className="md:col-span-12 space-y-6 text-slate-600 leading-relaxed text-lg">
+            <div className="md:col-span-12 space-y-6 text-slate-600 leading-relaxed text-base">
               <div className="flex gap-6 text-sm font-bold text-navy-900 border-b border-gray-100 pb-6 uppercase tracking-wider">
                 <span className="flex items-center gap-2"><Clock size={16} className="text-gold-500"/> 60 минут</span>
                 <span className="flex items-center gap-2"><MapPin size={16} className="text-gold-500"/> Онлайн / Очно (Мск/СПб)</span>
@@ -556,7 +558,7 @@ const App = () => {
           </div>
 
           <div className="grid md:grid-cols-12 gap-12">
-            <div className="md:col-span-12 space-y-6 text-slate-600 leading-relaxed text-lg">
+            <div className="md:col-span-12 space-y-6 text-slate-600 leading-relaxed text-base">
               <div className="flex gap-6 text-sm font-bold text-navy-900 border-b border-gray-200 pb-6 uppercase tracking-wider">
                 <span className="flex items-center gap-2"><Clock size={16} className="text-gold-500"/> 75-90 минут</span>
                 <span className="flex items-center gap-2"><MapPin size={16} className="text-gold-500"/> Онлайн / Очно</span>
@@ -637,7 +639,7 @@ const App = () => {
           </div>
 
           <div className="grid md:grid-cols-12 gap-12">
-            <div className="md:col-span-12 space-y-6 text-slate-600 leading-relaxed text-lg">
+            <div className="md:col-span-12 space-y-6 text-slate-600 leading-relaxed text-base">
               <div className="flex gap-6 text-sm font-bold text-navy-900 border-b border-gray-100 pb-6 uppercase tracking-wider">
                 <span className="flex items-center gap-2"><Clock size={16} className="text-gold-500"/> от 90 минут</span>
                 <span className="flex items-center gap-2"><MapPin size={16} className="text-gold-500"/> Онлайн / Очно (РФ, Алжир)</span>
@@ -668,28 +670,42 @@ const App = () => {
                 </div>
               </div>
 
-              <div className="bg-navy-900 text-slate-300 p-8 rounded-lg mt-8">
-                <h3 className="font-serif text-xl text-white mb-6 font-bold">Возможно, вы столкнулись с такими вопросами:</h3>
-                <div className="grid gap-6">
-                    <ul className="space-y-4 text-base italic">
-                      <li className="flex gap-3">
-                        <span className="text-gold-500 font-bold">"</span>
-                        Как нам запустить поток идей, чтобы команда начала креативить, а не повторять наработанное?
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-gold-500 font-bold">"</span>
-                        Мы внедрили этот модный фреймворк, но что-то лучше не стало, только рутины добавилось
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-gold-500 font-bold">"</span>
-                        Мы общаемся только на корпоративах, как будто в остальное время этого времени и нет
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-gold-500 font-bold">"</span>
-                        У нас постоянно говорят про дружный коллектив и "мы - семья", но это только внешне
-                      </li>
-                    </ul>
+              {/* TWO COLUMNS: Questions (Left) & Problems (Right) */}
+              <div className="bg-navy-900 text-slate-300 p-8 rounded-lg mt-8 grid md:grid-cols-2 gap-10">
+                
+                {/* LEFT: Questions */}
+                <div>
+                  <h3 className="font-serif text-xl text-white mb-6 font-bold">Возможно, вы столкнулись с такими вопросами:</h3>
+                  <ul className="space-y-4 text-base italic">
+                    <li className="flex gap-3">
+                      <span className="text-gold-500 font-bold">"</span>
+                      Как нам запустить поток идей, чтобы команда начала креативить, а не повторять наработанное?
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-gold-500 font-bold">"</span>
+                      Мы внедрили этот модный фреймворк, но что-то лучше не стало, только рутины добавилось
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-gold-500 font-bold">"</span>
+                      Мы общаемся только на корпоративах, как будто в остальное время этого времени и нет
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-gold-500 font-bold">"</span>
+                      У нас постоянно говорят про дружный коллектив и "мы - семья", но это только внешне
+                    </li>
+                  </ul>
                 </div>
+
+                {/* RIGHT: Problems (No headline as requested) */}
+                <div className="flex flex-col justify-center">
+                   <ul className="space-y-3 text-base list-disc pl-4 text-white/90">
+                      <li>Конфликты и неэффективная коммуникация.</li>
+                      <li>Внедрение изменений: сопротивление, саботаж.</li>
+                      <li>Стратегические или кризисные сессии.</li>
+                      <li>Восстановление команды после потерь.</li>
+                   </ul>
+                </div>
+
               </div>
 
               <div className="mt-6">
@@ -767,10 +783,8 @@ const App = () => {
             </div>
             
             <div className="flex flex-col h-full justify-between space-y-8">
-               {/* Spacer to push content down or keep it balanced */}
-               <div className="hidden md:block"></div> 
-               
-               <div className="flex flex-col gap-6">
+               {/* Moved DOCUMENTS to the top to fill empty space */}
+               <div className="flex flex-col gap-6 pt-2">
                  <div>
                    <strong className="text-white block mb-3 uppercase tracking-widest text-xs font-bold">Документы</strong>
                    <ul className="space-y-3 text-sm text-slate-400">
@@ -778,7 +792,10 @@ const App = () => {
                      <li><a href="#" className="hover:text-gold-500 transition-colors">Политика конфиденциальности</a></li>
                    </ul>
                  </div>
-                 <div className="h-px bg-white/10 w-full"></div>
+               </div>
+
+               <div className="mt-auto">
+                 <div className="h-px bg-white/10 w-full mb-6"></div>
                  <p className="text-xs leading-relaxed text-slate-500">
                    © 2026 Anastasiia Druzhinina. <br/>
                    Услуги не являются медицинской деятельностью. При клинических состояниях обратитесь к врачу-психиатру.
