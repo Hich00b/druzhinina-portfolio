@@ -710,7 +710,7 @@ const App = () => {
               </div>
 
               <a 
-                href={LINKS.tgChat} 
+                href={LINKS.scheduling} 
                 target="_blank" 
                 rel="noreferrer"
                 aria-label="Обсудить бизнес задачу"
