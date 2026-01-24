@@ -7,8 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Lato', 'sans-serif'],
-        serif: ['"Playfair Display"', 'serif'],
+        // Set Nunito as the default sans and serif (unless you want to keep Playfair for titles)
+        // Based on your request "change font set up to Nunito", I will make it the primary.
+        sans: ['Nunito', 'sans-serif'],
+        serif: ['Nunito', 'serif'], // Switched to Nunito as requested
+        display: ['"Playfair Display"', 'serif'] // Kept just in case for specific accents
       },
       colors: {
         navy: { 900: '#0a192f', 800: '#112240' },
