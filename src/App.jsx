@@ -113,7 +113,7 @@ const App = () => {
   const profileUrl = "/images/profile-picture.webp";
   const bioUrl = "/images/web-picture.webp";
   
-  // LOGIC: Make 19, 20, 21 appear first, then 1, 2, 3...
+  // LOGIC: Make 19, 20, 21 appear first
   const priorityCerts = [19, 20, 21];
   const otherCerts = Array.from({ length: 21 }, (_, i) => i + 1)
     .filter(id => id !== 18 && !priorityCerts.includes(id));
@@ -132,7 +132,7 @@ const App = () => {
     <div className="min-h-screen flex flex-col font-sans text-navy-900 bg-sand-50 selection:bg-gold-500 selection:text-white overflow-x-hidden">
       
       {/* --- NAVIGATION BAR --- */}
-      <nav className="fixed w-full z-50 bg-sand-50/90 backdrop-blur-md border-b border-navy-900/5 transition-all">
+      <nav className="fixed w-full z-50 bg-sand-50/90 backdrop-blur-md border-b border-navy-900/5 transition-all font-sans">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex flex-col leading-none z-50">
             <span className="font-serif text-2xl font-bold tracking-tight text-navy-900">
@@ -149,7 +149,7 @@ const App = () => {
               <button 
                 key={item} 
                 onClick={() => scrollTo(item === 'Обо мне' ? 'about' : item === 'Квалификация' ? 'credentials' : item === 'Услуги' ? 'services' : 'reviews')}
-                className="hover:text-navy-900 transition-colors"
+                className="hover:text-navy-900 transition-colors font-extrabold"
               >
                 {item}
               </button>
@@ -315,12 +315,12 @@ const App = () => {
       {/* --- BIO SECTION --- */}
       <section id="about" className="pt-20 pb-0 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-12 items-start">
+          {/* Changed items-start to items-stretch to make columns equal height */}
+          <div className="grid md:grid-cols-12 gap-12 items-stretch">
             <div className="md:col-span-7 space-y-8 pb-12">
               <h2 className="font-serif text-4xl text-navy-900 font-bold">
                 Путь <span className="line-through decoration-amber-700 decoration-2 text-slate-400">не</span>Героя и принципы в работе
               </h2>
-              {/* Reduced font size to text-base to account for Nunito's larger appearance */}
               <div className="prose prose-slate text-slate-600 leading-loose text-base">
                 <p>
                   Мой путь в психологию начался не с получения «вышки», а со сферы управления проектами и исследований. Так, более 10 лет я работаю с командами — от наукоёмких стартапов в СНГ до компаний в Европе и Азии. За это время получилось сформировать для себя ключевые принципы, которые теперь применяю в психологической практике с клиентами и считаю основой любого взаимодействия человек-человек: доверие, интерес, честность.
@@ -351,9 +351,10 @@ const App = () => {
                 ))}
               </div>
             </div>
-            {/* Removed self-end to prevent space at top, added items-start to grid above */}
-            <div className="md:col-span-5 relative mt-8 md:mt-0">
-               <div className="aspect-[4/5] bg-slate-100 relative overflow-hidden rounded-sm">
+            
+            <div className="md:col-span-5 relative mt-8 md:mt-0 flex flex-col">
+               {/* H-FULL forces the image container to fill the full height of the text column */}
+               <div className="h-full bg-slate-100 relative overflow-hidden rounded-sm min-h-[500px]">
                  <img 
                     src={bioUrl} 
                     alt="Anastasiia working process" 
@@ -670,10 +671,7 @@ const App = () => {
                 </div>
               </div>
 
-              {/* TWO COLUMNS: Questions (Left) & Problems (Right) */}
               <div className="bg-navy-900 text-slate-300 p-8 rounded-lg mt-8 grid md:grid-cols-2 gap-10">
-                
-                {/* LEFT: Questions */}
                 <div>
                   <h3 className="font-serif text-xl text-white mb-6 font-bold">Возможно, вы столкнулись с такими вопросами:</h3>
                   <ul className="space-y-4 text-base italic">
@@ -696,7 +694,6 @@ const App = () => {
                   </ul>
                 </div>
 
-                {/* RIGHT: Problems (No headline as requested) */}
                 <div className="flex flex-col justify-center">
                    <ul className="space-y-3 text-base list-disc pl-4 text-white/90">
                       <li>Конфликты и неэффективная коммуникация.</li>
@@ -705,7 +702,6 @@ const App = () => {
                       <li>Восстановление команды после потерь.</li>
                    </ul>
                 </div>
-
               </div>
 
               <div className="mt-6">
@@ -728,7 +724,8 @@ const App = () => {
       </section>
 
       {/* --- REVIEWS (SOCIAL PROOF) --- */}
-      <section id="reviews" className="py-20 bg-white overflow-hidden">
+      {/* REMOVED top padding (pt-0) to fix large gap */}
+      <section id="reviews" className="pt-0 pb-20 bg-white overflow-hidden">
         <div className="container mx-auto px-6 mb-12">
           <h2 className="font-serif text-4xl text-center mb-4 font-bold">Отзывы</h2>
           <p className="text-center text-slate-400 text-sm uppercase tracking-widest font-bold">Листайте вправо</p>
