@@ -91,7 +91,7 @@ const App = () => {
     },
     {
       id: "service-business",
-      title: "Бизнес-психология",
+      title: "Бизнес-Психология",
       subtitle: "Для команд",
       price: "По договоренности",
       duration: "от 90 минут",
@@ -462,7 +462,7 @@ const App = () => {
                     <p className="md:hidden mt-2 text-amber-700 font-serif text-sm font-bold">{s.price}</p>
                   </div>
                   <div className="md:hidden text-navy-900">
-                    {openServiceIdx === i ? <ChevronUp /> : <ChevronDown />}
+                    {openServiceServiceIdx === i ? <ChevronUp /> : <ChevronDown />}
                   </div>
                 </div>
                 <div className={`px-6 pb-6 md:px-10 md:pb-10 flex-col flex-grow ${openServiceIdx === i ? 'flex' : 'hidden'} md:flex`}>
@@ -634,7 +634,7 @@ const App = () => {
           <div className="flex items-center gap-4 mb-8">
             <div className="p-3 bg-navy-800 text-white rounded-full"><Target size={24} /></div>
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-navy-900 font-bold">Бизнес-психология</h2>
+              <h2 className="font-serif text-3xl md:text-4xl text-navy-900 font-bold">Бизнес-Психология</h2>
               <p className="text-amber-700 uppercase tracking-widest text-xs font-bold mt-1">для команд, отделов, подразделений</p>
             </div>
           </div>
@@ -723,7 +723,6 @@ const App = () => {
       </section>
 
       {/* --- REVIEWS (SOCIAL PROOF) --- */}
-      {/* REMOVED top padding (pt-0) to fix large gap */}
       <section id="reviews" className="pt-0 pb-20 bg-white overflow-hidden">
         <div className="container mx-auto px-6 mb-12">
           <h2 className="font-serif text-4xl text-center mb-4 font-bold">Отзывы</h2>
@@ -760,19 +759,19 @@ const App = () => {
                 Работа начинается с диагностики. Напишите мне в удобном мессенджере, обсудим и подберем время.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
-                <a href={LINKS.tgChat} aria-label="Telegram Личный" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#229ED9] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                <a href={LINKS.tgChat} target="_blank" rel="noopener noreferrer" aria-label="Telegram Личный" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#229ED9] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
                   <MessageCircle size={18} /> Личный Telegram
                 </a>
-                <a href={LINKS.whatsapp} aria-label="WhatsApp" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#25D366] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#25D366] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
                   <MessageCircle size={18} /> WhatsApp
                 </a>
-                <a href={LINKS.tgChannel} aria-label="Telegram Канал" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#229ED9] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                <a href={LINKS.tgChannel} target="_blank" rel="noopener noreferrer" aria-label="Telegram Канал" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#229ED9] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
                   <Send size={18} /> Telegram Канал
                 </a>
-                <a href={LINKS.instagram} aria-label="Instagram" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#E1306C] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
+                <a href={LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#E1306C] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm">
                   <Instagram size={18} /> Instagram
                 </a>
-                <a href={LINKS.youtube} aria-label="YouTube" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#FF0000] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm sm:col-span-2">
+                <a href={LINKS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center gap-3 bg-white/10 hover:bg-[#FF0000] hover:text-white px-6 py-4 text-xs font-bold uppercase tracking-widest transition-all rounded-sm sm:col-span-2">
                   <Youtube size={18} /> YouTube
                 </a>
               </div>
