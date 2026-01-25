@@ -643,7 +643,6 @@ const App = () => {
             <div className="md:col-span-12 space-y-6 text-slate-600 leading-relaxed text-base">
               <div className="flex gap-6 text-sm font-bold text-navy-900 border-b border-gray-100 pb-6 uppercase tracking-wider">
                 <span className="flex items-center gap-2"><Clock size={16} className="text-gold-500"/> от 90 минут</span>
-                <span className="flex items-center gap-2"><MapPin size={16} className="text-gold-500"/> Онлайн / Очно (РФ, Алжир)</span>
               </div>
 
               <p>
