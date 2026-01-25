@@ -91,7 +91,7 @@ const App = () => {
     },
     {
       id: "service-business",
-      title: "Бизнес-Психология",
+      title: "Бизнес-психология",
       subtitle: "Для команд",
       price: "По договоренности",
       duration: "от 90 минут",
@@ -634,7 +634,7 @@ const App = () => {
           <div className="flex items-center gap-4 mb-8">
             <div className="p-3 bg-navy-800 text-white rounded-full"><Target size={24} /></div>
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-navy-900 font-bold">Бизнес-Психология</h2>
+              <h2 className="font-serif text-3xl md:text-4xl text-navy-900 font-bold">Бизнес-психология</h2>
               <p className="text-amber-700 uppercase tracking-widest text-xs font-bold mt-1">для команд, отделов, подразделений</p>
             </div>
           </div>
