@@ -10,7 +10,7 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openServiceIdx, setOpenServiceIdx] = useState(null);
 
-  // 1. Lock body scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -22,10 +22,10 @@ const App = () => {
     };
   }, [isMenuOpen]);
 
-  // 2. NEW FIX: Automatically close menu (and unlock scroll) when resizing to Desktop
+  // Automatically close menu when resizing to Desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) { // 768px is the 'md' breakpoint
+      if (window.innerWidth >= 768) {
         setIsMenuOpen(false);
       }
     };
@@ -265,14 +265,12 @@ const App = () => {
               без идеальных картинок и успешного успеха
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href={LINKS.scheduling} 
-                target="_blank" 
-                rel="noreferrer"
+              <button 
+                onClick={() => scrollTo('services')} 
                 className="bg-navy-900 text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-navy-800 transition-all flex items-center justify-center gap-2 group"
               >
                 Выбрать формат <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform"/>
-              </a>
+              </button>
               <a 
                 href={LINKS.tgChat} target="_blank" rel="noreferrer"
                 className="px-8 py-4 border border-navy-900/20 text-navy-900 text-xs font-bold uppercase tracking-widest hover:bg-white transition-all flex items-center justify-center gap-2"
