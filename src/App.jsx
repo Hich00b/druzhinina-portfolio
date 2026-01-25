@@ -10,7 +10,7 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openServiceIdx, setOpenServiceIdx] = useState(null);
 
-  // Lock body scroll when mobile menu is open
+  // 1. Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -21,6 +21,18 @@ const App = () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
+
+  // 2. NEW FIX: Automatically close menu (and unlock scroll) when resizing to Desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) { // 768px is the 'md' breakpoint
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleService = (idx) => {
     setOpenServiceIdx(openServiceIdx === idx ? null : idx);
