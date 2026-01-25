@@ -315,7 +315,6 @@ const App = () => {
       {/* --- BIO SECTION --- */}
       <section id="about" className="pt-20 pb-0 bg-white">
         <div className="container mx-auto px-6">
-          {/* Changed items-start to items-stretch to make columns equal height */}
           <div className="grid md:grid-cols-12 gap-12 items-stretch">
             <div className="md:col-span-7 space-y-8 pb-12">
               <h2 className="font-serif text-4xl text-navy-900 font-bold">
@@ -353,7 +352,6 @@ const App = () => {
             </div>
             
             <div className="md:col-span-5 relative mt-8 md:mt-0 flex flex-col">
-               {/* H-FULL forces the image container to fill the full height of the text column */}
                <div className="h-full bg-slate-100 relative overflow-hidden rounded-sm min-h-[500px]">
                  <img 
                     src={bioUrl} 
@@ -462,7 +460,7 @@ const App = () => {
                     <p className="md:hidden mt-2 text-amber-700 font-serif text-sm font-bold">{s.price}</p>
                   </div>
                   <div className="md:hidden text-navy-900">
-                    {openServiceServiceIdx === i ? <ChevronUp /> : <ChevronDown />}
+                    {openServiceIdx === i ? <ChevronUp /> : <ChevronDown />}
                   </div>
                 </div>
                 <div className={`px-6 pb-6 md:px-10 md:pb-10 flex-col flex-grow ${openServiceIdx === i ? 'flex' : 'hidden'} md:flex`}>
